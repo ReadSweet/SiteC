@@ -1,0 +1,15 @@
+# ReadSweet SiteC .htaccess File
+# Copyright © 2015 ReadSweet.
+# /.htaccess
+
+DirectoryIndex static/index1.php
+
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+Options -Indexes
+Options -MultiViews
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_URI} !^/static/
+RewriteRule . static/index1.php [QSA,L]
+</IfModule>

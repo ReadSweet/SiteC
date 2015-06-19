@@ -9,7 +9,17 @@
 require_once RSSC_ROOT_CORE . '/class.php';
 require_once RSSC_ROOT_CORE . '/analyze.php';
 
-// The developing work is not finished yet.
-echo '<br />The developing work is not finished yet!<br />Please check our repository for updates.';
+// Now load the direction file.
+require_once RSSC_ROOT_SCRIPT . '/direct/direct.php';
+
+// Now load files for the application page.
+require RSSC_ROOT_APP . RSSCKernel::$Direct['Page'];
+require RSSC_ROOT_TEMPLATE . '/' . $TempPage->TemplateName . '/info.php';
+RSSCKernel::$CurrentTemplate = $TempTemplate;
+RSSCKernel::$CurrentTemplate->AssociatedPage = $TempPage;
+if (!empty(RSSCKernel::$CurrentTemplate->AssociatedPage->OperationFile))
+	require RSSC_ROOT_APP . '/' . RSSCKernel::$CurrentTemplate->AssociatedPage->OperationFile;
+
+RSSCKernel::$CurrentTemplate->Output();
 
 ?>

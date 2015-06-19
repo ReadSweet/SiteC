@@ -6,6 +6,8 @@
 */
 
 // Now load the file containing a class.
+require_once RSSC_ROOT_CORE . '/class/classTemplate.php';
+require_once RSSC_ROOT_CORE . '/class/classPage.php';
 require_once RSSC_ROOT_CORE . '/class/classKernel.php';
 
 ?>
